@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Malathi | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#020617;color:#e2e8f0;overflow-x:hidden}
+html{scroll-behavior:smooth}
+
+header{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:20px 10%;position:fixed;width:100%;top:0;
+  background:rgba(2,6,23,0.8);backdrop-filter:blur(10px);z-index:1000
+}
+header h1{color:#38bdf8}
+nav a{color:#e2e8f0;margin-left:20px;text-decoration:none;position:relative}
+nav a::after{content:'';position:absolute;width:0;height:2px;background:#38bdf8;left:0;bottom:-5px;transition:0.3s}
+nav a:hover::after{width:100%}
+
+section{padding:100px 10%}
+
+.hero{
+  min-height:100vh;display:flex;align-items:center;justify-content:space-between;gap:40px
+}
+.hero-text{max-width:50%}
+.hero h2{font-size:40px}
+.hero span{color:#38bdf8}
+.hero p{margin-top:10px;opacity:0.8}
+
+.hero img{
+  width:300px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,0.5)
+}
+
+.btn{
+  display:inline-block;margin-top:20px;padding:12px 25px;
+  background:#38bdf8;color:#020617;border-radius:30px;
+  text-decoration:none;transition:0.3s
+}
+.btn:hover{transform:scale(1.05)}
+
+h2{margin-bottom:20px}
+
+.card{
+  background:#0f172a;padding:20px;border-radius:16px;
+  transition:0.3s;box-shadow:0 10px 30px rgba(0,0,0,0.3)
+}
+.card:hover{transform:translateY(-10px)}
+
+.skills-list{display:flex;flex-wrap:wrap;gap:15px}
+.skills-list span{background:#1e293b;padding:10px 15px;border-radius:20px}
+
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+
+.contact input,.contact textarea{width:100%;padding:12px;margin-top:10px;border:none;border-radius:8px}
+
+footer{text-align:center;padding:20px;background:#020617}
+
+.fade-in{opacity:0;transform:translateY(40px);transition:all 0.8s ease}
+.fade-in.show{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Malathi</h1>
+<nav>
+<a href="#">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<div class="hero-text">
+<h2>Hi, I'm <span>Malathi</span></h2>
+<p>MCA Student | Web Developer | Database Enthusiast</p>
+<p>I am an MCA student with strong interest in web development, web designing, and database management. I build responsive, user-friendly applications that solve real-world problems efficiently.</p>
+<a href="#projects" class="btn">View My Work</a>
+</div>
+
+<!-- Replace image name below with your actual file name -->
+<img src="C:\Users\ELCOT\OneDrive\Desktop\linkedin.jpeg" alt="Malathi">
+</section>
+
+<section id="about" class="fade-in">
+<h2>About Me</h2>
+<div class="card">
+<p>I am skilled in web designing and database management, with a focus on developing scalable, efficient, and user-centric web applications. I continuously strive to improve my technical skills and build impactful digital solutions.</p>
+</div>
+</section>
+
+<section id="skills" class="fade-in">
+<h2>Technical Skills</h2>
+<div class="skills-list">
+<span>HTML</span>
+<span>CSS</span>
+<span>Java</span>
+<span>C</span>
+<span>C#</span>
+<span>.NET</span>
+<span>Database</span>
+<span>SQL</span>
+<span>MySQL</span>
+<span>JavaScript</span>
+<span>PHP</span>
+</div>
+</section>
+
+<section id="projects" class="fade-in">
+<h2>Projects</h2>
+<div class="projects-grid">
+
+<div class="card">
+<h3>Quiz Application</h3>
+<p>A web-based quiz application featuring user registration and login functionality. It supports multiple subjects, structured question and answer modules, and provides a result page to evaluate user performance. Designed for an interactive and engaging learning experience.</p>
+</div>
+
+<div class="card">
+<h3>Web Data Mining – Scam Message Detection</h3>
+<p>A web application designed to detect scam and harmful text messages, similar to social media platforms. It includes both user and admin panels. Users can register and post content, while the admin reviews, approves users, monitors posts, removes inappropriate content, and blocks malicious users to maintain platform integrity.</p>
+</div>
+
+</div>
+</section>
+
+<section id="contact" class="fade-in contact">
+<h2>Contact Me</h2>
+<input type="text" placeholder="Your Name">
+<input type="email" placeholder="Your Email">
+<textarea rows="5" placeholder="Your Message"></textarea>
+<a href="#" class="btn">Send Message</a>
+</section>
+
+<footer>
+<p>© 2026 Malathi | All Rights Reserved</p>
+</footer>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+});
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
